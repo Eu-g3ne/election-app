@@ -1,0 +1,63 @@
+{
+  "parties": {
+    "id":"ID",
+    "name":"Назва",
+    "created_at":"Дата створення",
+    "leader":"Лідер",
+    "total_members":"Усього членів"
+  },
+  "voters": {
+    "id": "ID",
+    "surname": "Прізвище",
+    "name": "Ім'я",
+    "patronymic": "По-батькові",
+    "birthday": "День народження",
+    "birthplace": "Місце народження",
+    "inn": "ІНН",
+    "passport": "Паспорт"
+  },
+  "candidates": {
+    "id":"ID",
+    "surname":"Прізвище",
+    "name":"Ім'я",
+    "partonymic":"По-батькові",
+    "birthday":"День народження",
+    "education":"Освіта",
+    "passport":"Паспорт",
+    "activity":"Діяльність"
+  },
+  "elections": {
+    "id":"ID",
+    "post":"Пост",
+    "status":"Статус",
+    "started_at":"Дата початку",
+    "finished_at":"Дата завершення",
+    "candidates_count": "Кількість кандидатів"
+  },
+  "electionCandidates": {
+    "id":"ID",
+    "surname":"Прізвище",
+    "name":"Ім'я",
+    "partonymic":"По-батькові",
+    "birthday":"День народження",
+    "education":"Освіта",
+    "passport":"Паспорт",
+    "activity":"Діяльність",
+    "total_votes":"Кількість голосів"
+  },
+  "constituencies": {
+    "id":"ID",
+    "region":"Регіон",
+    "email":"Електронна пошта",
+    "phone":"Телефон",
+    "address":"Адреса",
+    "total_voters":"Кількість виборців"
+  },
+  "pollingStations": {
+    "id":"ID",
+    "address":"Адреса",
+    "city":"Місто",
+    "phone":"Телефон",
+    "total_voters":"Кількість виборців"
+  }
+}
