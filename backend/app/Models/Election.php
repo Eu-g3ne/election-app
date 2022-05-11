@@ -25,6 +25,6 @@ class Election extends Model
 
   public function voters()
   {
-    return $this->belongsToMany(Voter::class)->using(ELectionVoter::class)->withPivot('candidate_id');
+    return $this->belongsToMany(Voter::class)->using(ElectionVoter::class)->withPivot('candidate_id');
   }
 }
