@@ -1,8 +1,10 @@
 <script setup>
 import { onBeforeMount, ref } from 'vue'
+import useCandidates from '../../composables/candidates';
 import useElections from '../../composables/elections'
 
 const { election, showElection, updateElection } = useElections();
+const { candidates, getAllCandidates } = useCandidates();
 const loading = ref(true);
 const props = defineProps({
   id: { type: Number, required: true },
@@ -10,12 +12,15 @@ const props = defineProps({
 onBeforeMount(() => {
   showElection(props.id).then(() => {
     loading.value = false;
-  })
+  }),
+  getAllCandidates()
 })
 
 const sendUpdate = () => {
+  election.value.candidates_count = election.value.candidates.length
   updateElection()
 }
+
 
 </script>
 <template>
@@ -46,6 +51,12 @@ const sendUpdate = () => {
           <div class="mb-3">
             <label class="form-label">Дата завершення</label>
             <input type="date" class="form-control" v-model="election.finished_at">
+          </div>
+          <div class="mb-3">
+            <select class="form-select" size="7" multiple aria-label="multiple select example" v-model.number="election.candidates">
+              <option disabled>Choose</option>
+              <option v-for="candidate in candidates.candidates" :value="candidate.id">{{ candidate.surname }} {{ candidate.name }}</option>
+            </select>
           </div>
         </div>
       </div>
