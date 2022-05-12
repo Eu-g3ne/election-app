@@ -35,10 +35,18 @@ export default function useElections() {
       })
   }
 
+  const pluck = (array, key) => {
+    return array.map(o => o[key])
+  }
+
   const showElection = async (electionId) => {
     await axios.get(URL + '/elections/' + electionId)
       .then(response => {
         election.value = response.data
+      })
+    await axios.get(URL + '/elections/' + electionId + '/candidates')
+      .then(response => {
+        election.value.candidates = pluck(response.data.candidates, "id");
       })
   }
 

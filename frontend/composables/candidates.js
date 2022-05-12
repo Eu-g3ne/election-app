@@ -20,6 +20,13 @@ export default function useCandidates() {
       })
   }
 
+  const getAllCandidates = async () => {
+    await axios.get(URL + '/all')
+      .then(response => {
+        candidates.value = response.data;
+      })
+  }
+
   const addCandidate = async () => {
     axios.post(URL, candidate.value, options)
       .then(response => {
@@ -68,5 +75,5 @@ export default function useCandidates() {
       })
   }
 
-  return { candidates, candidate, contract, getCandidates, addCandidate, showCandidate, updateCandidate, deleteCandidate }
+  return { candidates, candidate, contract, getCandidates, getAllCandidates, addCandidate, showCandidate, updateCandidate, deleteCandidate }
 }
