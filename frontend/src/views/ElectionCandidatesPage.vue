@@ -40,8 +40,7 @@ const sendUnvote = async (candidate) => {
 
 </script>
 <template>
-  <div class="container-fluid">
-    <h1>Кандидати</h1>
+    <h1 class="text-lg-center col-11 mb-5">Кандидати</h1>
     <div v-show="loading" class="spinner-border mt-3" role="status">
       <span class="visually-hidden">Loading...</span>
     </div>
@@ -61,5 +60,4 @@ const sendUnvote = async (candidate) => {
         </table-row>
       </my-table>
     </div>
-  </div>
 </template>

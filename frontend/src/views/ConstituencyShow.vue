@@ -19,16 +19,9 @@ const sendUpdate = () => {
 
 </script>
 <template>
-  <div class="row">
-    <div class="col-2 d-flex align-items-start">
-      <router-link to="/constituencies"><button class="btn btn-dark"><i class="fas fa-circle-chevron-left"></i>
-          Назад</button>
-      </router-link>
+    <div class="col-11 mb-5">
+        <h2>Виборчий округ</h2>
     </div>
-    <div class="col-9">
-      <h2 class="justify-content-center">Виборчий округ</h2>
-    </div>
-  </div>
   <div v-show="loading" class="spinner-border" role="status">
     <span class="visually-hidden">Loading...</span>
   </div>

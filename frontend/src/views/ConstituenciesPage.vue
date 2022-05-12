@@ -26,8 +26,7 @@ const destroy = async (id) => {
 </script>
 
 <template>
-  <h2 class="text-lg-center fw-bold">Виборчі округи</h2>
-
+  <h2 class="text-lg-center col-11">Виборчі округи</h2>
   <div class="row">
     <div class="col d-flex justify-content-start">
       <button class="btn btn-dark text-nowrap" type="button" data-bs-toggle="collapse" data-bs-target="#msclps"

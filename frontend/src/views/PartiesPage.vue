@@ -26,7 +26,7 @@ const destroy = async (id) => {
 </script>
 
 <template>
-  <h2 class="text-lg-center fw-bold">Партії</h2>
+  <h2 class="text-lg-center col-11">Партії</h2>
 
   <div class="row">
     <div class="col d-flex justify-content-start">

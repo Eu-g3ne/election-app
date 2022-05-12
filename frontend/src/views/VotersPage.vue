@@ -39,7 +39,7 @@ const destroy = async (id) => {
 </script>
 
 <template>
-  <h2 class="text-lg-center fw-bold">Виборці</h2>
+  <h2 class="text-lg-center col-11">Виборці</h2>
   <div class="row">
     <div class="col d-flex justify-content-start">
       <button @click="formOpen" class="btn btn-dark text-nowrap" type="button" data-bs-toggle="collapse"

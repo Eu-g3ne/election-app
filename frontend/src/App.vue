@@ -5,12 +5,12 @@ import NavBar from './components/NavBar.vue'
 <template>
   <NavBar />
   <div class="container-fluid">
-    <div v-show="$route.name != 'Home'" class="float-start">
-      <button class="btn btn-dark btn-floating" type="button" @click="$router.back()"><i class="fas fa-backward"></i>
-        Назад</button>
-    </div>
-    <router-view>
-    </router-view>
+      <div v-show="$route.name != 'Home'" class="float-start">
+        <button class="btn btn-dark btn-floating" type="button" @click="$router.back()"><i class="fas fa-backward"></i>
+          Назад</button>
+      </div>
+        <router-view>
+        </router-view>
   </div>
   <footer class=" bg-dark d-flex flex-wrap justify-content-start align-items-center py-3 mt-5 border-top">
     <p class="col-sm-5 mb-0 text-muted">© 2022 Eug3ne, DDMA</p>

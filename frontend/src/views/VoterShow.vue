@@ -32,22 +32,13 @@ const sendUpdate = () => {
 
 </script>
 <template>
-  <div>
-    <div class="row">
-      <div class="col-2 d-flex align-items-start">
-        <router-link to="/voters"><button class="btn btn-dark"><i class="fas fa-circle-chevron-left"></i>
-            Назад</button>
-        </router-link>
-      </div>
-      <div class="col-8">
-        <h2 class="justify-content-center">Виборець</h2>
-      </div>
+    <div class="col-11 mb-5">
+        <h2>Виборець</h2>
     </div>
     <div v-show="loading" class="spinner-border" role="status">
       <span class="visually-hidden">Loading...</span>
     </div>
     <div v-show="!loading">
-
       <form class="text-start" @submit.prevent="sendUpdate">
         <div class="row">
           <div class="col">
@@ -111,7 +102,6 @@ const sendUpdate = () => {
         <button class="btn btn-dark text-nowrap">Оновити дані</button>
       </form>
     </div>
-  </div>
 </template>
 <style scoped>
 input,

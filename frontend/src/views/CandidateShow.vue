@@ -25,16 +25,8 @@ const sendUpdate = () => {
 
 </script>
 <template>
-  <div>
-    <div class="row">
-      <div class="col-2 d-flex align-items-start mb-4">
-        <router-link to="/candidates"><button class="btn btn-dark"><i class="fas fa-circle-chevron-left"></i>
-            Назад</button>
-        </router-link>
-      </div>
-      <div class="col-8">
-        <h2 class="justify-content-center">Кандидат</h2>
-      </div>
+    <div class="col-11 mb-5">
+        <h2>Кандидат</h2>
     </div>
     <form class="text-start" @submit.prevent="sendUpdate">
       <div class="row">
@@ -87,7 +79,6 @@ const sendUpdate = () => {
       </div>
       <button class="btn btn-dark text-nowrap">Оновити дані</button>
     </form>
-  </div>
 </template>
 <style scoped>
 input,

@@ -23,8 +23,7 @@ onMounted(() => {
 
 </script>
 <template>
-  <div class="container-fluid">
-    <h1>Elections</h1>
+    <h1 class="col-11 text-lg-center mb-5">Голосування</h1>
     <div v-show="loading" class="spinner-border mt-3" role="status">
       <span class="visually-hidden">Loading...</span>
     </div>
@@ -39,5 +38,4 @@ onMounted(() => {
         </table-row>
       </my-table>
     </div>
-  </div>
 </template>
