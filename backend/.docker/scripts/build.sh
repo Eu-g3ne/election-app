@@ -5,7 +5,7 @@ composer update
 
 php artisan cache:clear
 php artisan storage:link
-chown -R www-data *
+chown -R www-data ./storage
 php artisan clear-compiled
 echo "Composer: Dump Autoload"
 composer dump-autoload
