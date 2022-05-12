@@ -21,6 +21,9 @@ class ElectionResource extends JsonResource
       'status' => $this->status,
       'started_at' => $this->started_at,
       'finished_at' => $this->finished_at,
+      'candidates'=> $this->whenLoaded('candidates', function() {
+        return $this->candidates->pluck('id');
+      }),
       'candidates_count' => $this->candidates()->count(),
 
     ];
