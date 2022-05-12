@@ -27,7 +27,10 @@ class UpdateRequest extends FormRequest
       'post' => 'sometimes|string|max:255',
       'status' => 'sometimes|string|max:255',
       'started_at' => 'sometimes|date',
-      'finished_at' => 'sometimes|date'
+      'finished_at' => 'sometimes|date',
+      'candidates' => 'sometimes|array',
+      'candidates.*' => 'sometimes|integer',
+      'candidates_count' => 'sometimes|integer'
     ];
   }
 }
