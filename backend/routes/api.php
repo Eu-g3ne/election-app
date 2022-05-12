@@ -11,6 +11,8 @@ use App\Http\Controllers\VotingController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+  Route::get('candidates/all', [CandidateController::class, 'allCandidates']);
+
 Route::apiResources([
   'candidates' => CandidateController::class,
   'constituencies' => ConstituencyController::class,
@@ -37,6 +39,8 @@ Route::prefix('elections/{election}')->group(function () {
   Route::get('/candidates', [ElectionController::class, 'candidates']);
 });
 
+
+
 Route::prefix('voters/{voter}')->group(function () {
   Route::get('/elections', [ElectionController::class, 'availableElections']);
   Route::prefix('/elections/{election}')->group(function () {
@@ -45,7 +49,6 @@ Route::prefix('voters/{voter}')->group(function () {
     Route::delete('/candidates/{candidate}', [VotingController::class, 'deleteVote']);
   });
 });
-
 Route::prefix('constituencies/{constituency}')->group(function () {
   Route::get('/voters', [ConstituencyController::class, 'voters']);
   Route::get('/polling_stations', [ConstituencyController::class, 'pollingStations']);
