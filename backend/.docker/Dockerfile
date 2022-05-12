@@ -26,7 +26,6 @@ RUN apt-get update && apt-get install -y \
   && docker-php-source delete
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-
 COPY /backend/.docker/config/php/local.ini /usr/local/etc/php/conf.d/local.ini
 
 COPY /backend/.docker/scripts/wait-for-it.sh /wait-for-it.sh
