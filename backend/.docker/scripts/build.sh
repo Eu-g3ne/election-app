@@ -3,8 +3,14 @@
 echo "Composer: Update"
 composer update
 
+php artisan cache:clear
+php artisan storage:link
+chown -R www-data *
+php artisan clear-compiled
 echo "Composer: Dump Autoload"
 composer dump-autoload
+
+php artisan optimize
 
 echo "Laravel: Generating encryption key"
 php artisan key:generate
