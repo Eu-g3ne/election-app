@@ -16,8 +16,6 @@ use Illuminate\Http\Request;
 
 class ElectionController extends Controller
 {
-
-
   public function __construct(Election $election)
   {
     $this->election = $election;
@@ -29,8 +27,7 @@ class ElectionController extends Controller
    */
   public function index()
   {
-
-    $elections = Election::all()->paginate(5);
+    $elections = Election::without('candidates')->paginate(5);
     return new ElectionCollection($elections);
   }
 
@@ -54,7 +51,7 @@ class ElectionController extends Controller
    */
   public function show(Election $election)
   {
-    return new ElectionResource($election);
+    return new ElectionResource($election->load('candidates'));
   }
 
   /**
@@ -67,6 +64,7 @@ class ElectionController extends Controller
   public function update(UpdateRequest $request, Election $election)
   {
     $election->update($request->validated());
+    $election->candidates()->sync($request->validated()['candidates']);
     return new ElectionResource($election);
   }
 
