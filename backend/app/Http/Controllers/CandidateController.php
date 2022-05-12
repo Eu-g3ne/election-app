@@ -33,6 +33,11 @@ class CandidateController extends Controller
     return new CandidateCollection($this->candidate);
   }
 
+  public function allCandidates() {
+    $this->candidate = Candidate::without('contract')->get();
+    return new CandidateCollection($this->candidate);
+  }
+
   public function store(StoreRequest $request, Party $party = null)
   {
     try {
