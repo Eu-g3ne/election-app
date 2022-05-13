@@ -1,5 +1,6 @@
 <script setup>
 import NavBar from './components/NavBar.vue'
+
 </script>
 
 <template>
@@ -20,7 +21,6 @@ import NavBar from './components/NavBar.vue'
 </template>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Montserrat+Alternates:wght@300;400&display=swap');
-
 #app {
   font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;

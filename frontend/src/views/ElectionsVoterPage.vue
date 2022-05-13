@@ -6,7 +6,7 @@ import { onMounted, ref } from 'vue';
 import useElections from '../../composables/elections.js'
 
 
-const { voterId, elections, getElectionsByVoter } = useElections()
+const { voterId, elections, getElections } = useElections()
 
 const props = defineProps({
   id: { type: Number, required: true }
@@ -14,7 +14,7 @@ const props = defineProps({
 const loading = ref(true);
 onMounted(() => {
   voterId.value = props.id;
-  getElectionsByVoter().then(() => {
+  getElections().then(() => {
     loading.value = false;
   })
 })

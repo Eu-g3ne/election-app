@@ -8,7 +8,12 @@ services:
     environment:
       MYSQL_DATABASE: laravel
       MYSQL_ROOT_PASSWORD: 'password'
-    command: ["--character-set-server=utf8mb4", "--collation-server=utf8mb4_unicode_ci", "--default-authentication-plugin=mysql_native_password"]
+    command:
+      [
+        "--character-set-server=utf8mb4",
+        "--collation-server=utf8mb4_unicode_ci",
+        "--default-authentication-plugin=mysql_native_password"
+      ]
     networks:
       - app
     ports:
@@ -26,7 +31,7 @@ services:
     volumes:
       - ./backend:/var/www
     working_dir: /var/www
-    command: ["/wait-for-it.sh", "database:3306", "--", "/build.sh"]
+    command: [ "/wait-for-it.sh", "database:3306", "--", "/build.sh" ]
     tty: true
     networks:
       - app
@@ -43,7 +48,15 @@ services:
     restart: unless-stopped
     volumes:
       - ./backend:/var/www
-    command: ["/wait-for-it.sh", "backend:9000", "--", "nginx", "-g", "daemon off;"]
+    command:
+      [
+        "/wait-for-it.sh",
+        "backend:9000",
+        "--",
+        "nginx",
+        "-g",
+        "daemon off;"
+      ]
     tty: true
     networks:
       - app
@@ -56,18 +69,18 @@ services:
   frontend:
     container_name: frontend
     build:
-      context: .
-      dockerfile: ./frontend/.docker/Dockerfile
+      context: ./frontend
+      dockerfile: ./Dockerfile
     restart: unless-stopped
     volumes:
-      - ./frontend:/app
-    working_dir: /app
-    command: ["/wait-for-it.sh", "backend_proxy:80", "--", "/build.sh"]
+      - ./frontend/dist:/app
+    command: [ "nginx", "-g", "daemon off;" ]
+    working_dir: /usr/share/nginx/html
     tty: true
     networks:
       - app
     ports:
-      - "8080:8080"
+      - "81:81"
     depends_on:
       - backend_proxy
 

@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Relations\Pivot;
 
-class ELectionVoter extends Pivot
+class ElectionVoter extends Pivot
 {
   public $timestamps = false;
   public $incrementing = true;
